@@ -278,13 +278,15 @@ xychart-beta
 
 ## Cross-Phase Propagation Summary
 
-| Concept | Phase 1 Belief | → Phase 2 Prior | Phase 2 Belief | → Phase 3 Prior | Phase 3 Belief | → Phase 4 Prior | Phase 4 Belief |
-|---------|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-| Local Realism | 0.65 | 0.65 | 0.52 | 0.52 | 0.12 | 0.12 | 0.05 |
-| Hidden Variables | 0.62 | 0.62 | 0.48 | — | — | — | — |
-| Quantum Entanglement | 0.55 | 0.55 | 0.78 | 0.78 | 0.96 | 0.96 | 0.99 |
-| Bell Inequality Valid | — | 0.50 | 0.72 | 0.72 | 0.95 | 0.95 | 0.98 |
-| No-Signaling | — | — | — | — | — | 0.50 | 0.98 |
+| Concept | **Initial**<br/>Prior | Phase 1<br/>Belief | → Phase 2<br/>Prior | Phase 2<br/>Belief | → Phase 3<br/>Prior | Phase 3<br/>Belief | → Phase 4<br/>Prior | Phase 4<br/>Belief |
+|---------|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+| Local Realism | **0.50** | 0.65 | 0.65 | 0.52 | 0.52 | 0.12 | 0.12 | 0.05 |
+| Hidden Variables | **0.50** | 0.62 | 0.62 | 0.48 | — | — | — | — |
+| Quantum Entanglement | **0.50** | 0.55 | 0.55 | 0.78 | 0.78 | 0.96 | 0.96 | 0.99 |
+| QM Incompleteness | **0.50** | 0.68 | 0.68 | 0.55 | — | — | — | — |
+| Bell Inequality Valid | **0.50** | — | 0.50 | 0.72 | 0.72 | 0.95 | 0.95 | 0.98 |
+| No-Signaling | **0.50** | — | — | — | — | — | 0.50 | 0.98 |
+| QM Completeness | **0.50** | 0.42 | 0.42 | 0.62 | 0.62 | 0.88 | 0.88 | 0.95 |
 
 ---
 
