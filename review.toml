@@ -1,200 +1,225 @@
-# Review configuration for bell-inequality-gaia
-# All priors set to 0.50 as per project requirements
-
 [review]
-name = "bell-inequality-gaia-review"
-description = "Review of the formalized reasoning chain from EPR to Big Bell Test"
+# Bell Inequality — Chained Belief Propagation
+# Each phase inherits priors from the previous phase's posterior beliefs.
 
+# ============================================================
 # Phase 1: EPR Paradox (1935)
-[[claims]]
-label = "p1_criterion"
-prior = 0.50
-note = "EPR criterion of physical reality"
+# All leaf node priors = 0.50 (initial state, no prior knowledge)
+# ============================================================
+[[review.phases]]
+name = "Phase 1: EPR Paradox (1935)"
 
-[[claims]]
-label = "p1_position_reality"
-prior = 0.50
-note = "Position as element of reality"
+  # Leaf nodes: prior = 0.50
+  [[review.phases.claims]]
+  id = "p1_qm_precise"
+  prior = 0.50
+  prior_source = "leaf node, initial prior"
 
-[[claims]]
-label = "p1_momentum_reality"
-prior = 0.50
-note = "Momentum as element of reality"
+  [[review.phases.claims]]
+  id = "p1_epr_criterion"
+  prior = 0.50
+  prior_source = "leaf node, initial prior"
 
-[[claims]]
-label = "p1_completeness_criterion"
-prior = 0.50
-note = "Completeness criterion"
+  [[review.phases.claims]]
+  id = "p1_bohr_complementarity"
+  prior = 0.50
+  prior_source = "leaf node, initial prior"
 
-[[claims]]
-label = "p1_qm_incomplete"
-prior = 0.50
-note = "QM is incomplete"
+  [[review.phases.claims]]
+  id = "p1_qm_incomplete"
+  prior = 0.50
+  prior_source = "derived, deduction from p1_epr_criterion + p1_qm_precise"
 
-[[claims]]
-label = "p1_locality"
-prior = 0.50
-note = "Locality principle"
+  [[review.phases.claims]]
+  id = "p1_measurement_affects"
+  prior = 0.50
+  prior_source = "derived, deduction from p1_bohr_complementarity"
 
-[[claims]]
-label = "p1_reality"
-prior = 0.50
-note = "Physical reality exists independently"
+  [[review.phases.claims]]
+  id = "p1_local_realism"
+  prior = 0.50
+  prior_source = "derived, entailment from p1_qm_incomplete"
+  expected_belief = 0.65
 
-[[claims]]
-label = "p1_hidden_variables"
-prior = 0.50
-note = "Hidden variables exist"
+  [[review.phases.claims]]
+  id = "p1_hidden_variables"
+  prior = 0.50
+  prior_source = "derived, entailment from p1_qm_incomplete"
+  expected_belief = 0.62
 
-[[claims]]
-label = "p1_epr_conclusion"
-prior = 0.50
-note = "EPR main conclusion"
+  [[review.phases.claims]]
+  id = "p1_entanglement_real"
+  prior = 0.50
+  prior_source = "derived, weakening from contradiction"
+  expected_belief = 0.55
 
-[[claims]]
-label = "p1_qm_local_realism_consistent"
-prior = 0.50
-note = "Local realism compatible with 1935 experiments"
-
+# ============================================================
 # Phase 2: Bell's Theorem (1964)
-[[claims]]
-label = "p2_lhv_theory"
-prior = 0.50
-note = "Local hidden variable theory definition"
+# Shared concepts inherit priors from Phase 1 posterior beliefs:
+#   local_realism prior = 0.65 (Phase 1 belief)
+#   hidden_variables prior = 0.62 (Phase 1 belief)
+#   entanglement prior = 0.55 (Phase 1 belief)
+# New concepts: prior = 0.50
+# ============================================================
+[[review.phases]]
+name = "Phase 2: Bell's Theorem (1964)"
 
-[[claims]]
-label = "p2_bell_inequality"
-prior = 0.50
-note = "Bell's inequality formulation"
+  [[review.phases.claims]]
+  id = "p2_local_realism"
+  prior = 0.65
+  prior_source = "Phase 1 belief of p1_local_realism = 0.65"
+  expected_belief = 0.52
 
-[[claims]]
-label = "p2_qm_violates_bell"
-prior = 0.50
-note = "QM violates Bell's inequality"
+  [[review.phases.claims]]
+  id = "p2_hidden_variables"
+  prior = 0.62
+  prior_source = "Phase 1 belief of p1_hidden_variables = 0.62"
+  expected_belief = 0.48
 
-[[claims]]
-label = "p2_qm_prediction"
-prior = 0.50
-note = "QM predicts S = 2√2"
+  [[review.phases.claims]]
+  id = "p2_entanglement_real"
+  prior = 0.55
+  prior_source = "Phase 1 belief of p1_entanglement_real = 0.55"
+  expected_belief = 0.78
 
-[[claims]]
-label = "p2_lhv_limit"
-prior = 0.50
-note = "LHV predicts S ≤ 2"
+  [[review.phases.claims]]
+  id = "p2_bell_inequality"
+  prior = 0.50
+  prior_source = "leaf node, new concept in Phase 2"
+  expected_belief = 0.72
 
-[[claims]]
-label = "p2_incompatibility"
-prior = 0.50
-note = "QM and local realism incompatible"
+  [[review.phases.claims]]
+  id = "p2_qm_violation"
+  prior = 0.50
+  prior_source = "leaf node, new concept in Phase 2"
+  expected_belief = 0.75
 
-[[claims]]
-label = "p2_experiment_decides"
-prior = 0.50
-note = "Experiment can resolve the question"
+  [[review.phases.claims]]
+  id = "p2_abandon_lr_or_r"
+  prior = 0.50
+  prior_source = "leaf node, new concept in Phase 2"
+  expected_belief = 0.70
 
-[[claims]]
-label = "p2_no_go_theorem"
-prior = 0.50
-note = "Bell's theorem as no-go theorem"
+  [[review.phases.claims]]
+  id = "p2_chsh_inequality"
+  prior = 0.50
+  prior_source = "leaf node, new concept in Phase 2"
+  expected_belief = 0.68
 
-# Phase 3: CHSH Experimental Verification (1969-2015)
-[[claims]]
-label = "p3_chsh_inequality"
-prior = 0.50
-note = "CHSH inequality S ≤ 2"
+# ============================================================
+# Phase 3: Experimental Verification (1982–2015)
+# Shared concepts inherit priors from Phase 2 posterior beliefs:
+#   bell_inequality prior = 0.72 (Phase 2 belief)
+#   qm_violation prior = 0.75 (Phase 2 belief)
+#   local_realism prior = 0.52 (Phase 2 belief)
+# New concepts: prior = 0.50
+# ============================================================
+[[review.phases]]
+name = "Phase 3: Experimental Verification (1982–2015)"
 
-[[claims]]
-label = "p3_chsh_qm_value"
-prior = 0.50
-note = "QM predicts S = 2√2"
+  [[review.phases.claims]]
+  id = "p3_bell_inequality"
+  prior = 0.72
+  prior_source = "Phase 2 belief of p2_bell_inequality = 0.72"
+  expected_belief = 0.95
 
-[[claims]]
-label = "p3_aspect_violation"
-prior = 0.50
-note = "Aspect 1982 violated CHSH"
+  [[review.phases.claims]]
+  id = "p3_qm_violation"
+  prior = 0.75
+  prior_source = "Phase 2 belief of p2_qm_violation = 0.75"
+  expected_belief = 0.98
 
-[[claims]]
-label = "p3_detection_loophole"
-prior = 0.50
-note = "Detection loophole description"
+  [[review.phases.claims]]
+  id = "p3_local_realism"
+  prior = 0.52
+  prior_source = "Phase 2 belief of p2_local_realism = 0.52"
+  expected_belief = 0.12
 
-[[claims]]
-label = "p3_locality_loophole"
-prior = 0.50
-note = "Locality loophole description"
+  [[review.phases.claims]]
+  id = "p3_experiments_violate"
+  prior = 0.50
+  prior_source = "leaf node, new experimental evidence"
+  expected_belief = 0.96
 
-[[claims]]
-label = "p3_freedom_loophole"
-prior = 0.50
-note = "Freedom-of-choice loophole"
+  [[review.phases.claims]]
+  id = "p3_detection_loophole"
+  prior = 0.50
+  prior_source = "leaf node, new concept"
+  expected_belief = 0.95
 
-[[claims]]
-label = "p3_hensen_loophole_free"
-prior = 0.50
-note = "Delft 2015 loophole-free"
+  [[review.phases.claims]]
+  id = "p3_locality_loophole"
+  prior = 0.50
+  prior_source = "leaf node, new concept"
+  expected_belief = 0.95
 
-[[claims]]
-label = "p3_nist_loophole_free"
-prior = 0.50
-note = "NIST 2015 loophole-free"
+  [[review.phases.claims]]
+  id = "p3_loophole_free"
+  prior = 0.50
+  prior_source = "leaf node, new concept"
+  expected_belief = 0.93
 
-[[claims]]
-label = "p3_vienna_loophole_free"
-prior = 0.50
-note = "Vienna 2015 loophole-free"
+  [[review.phases.claims]]
+  id = "p3_nonlocality_confirmed"
+  prior = 0.50
+  prior_source = "leaf node, new conclusion"
+  expected_belief = 0.96
 
-[[claims]]
-label = "p3_convergent_evidence"
-prior = 0.50
-note = "Multiple experiments converge"
+# ============================================================
+# Phase 4: Modern Applications (2017–2024)
+# Shared concepts inherit priors from Phase 3 posterior beliefs:
+#   nonlocality prior = 0.96 (Phase 3 belief)
+#   local_realism prior = 0.12 (Phase 3 belief)
+#   loophole_free prior = 0.93 (Phase 3 belief)
+# New concepts: prior = 0.50
+# ============================================================
+[[review.phases]]
+name = "Phase 4: Modern Applications (2017–2024)"
 
-[[claims]]
-label = "p3_local_realism_falsified"
-prior = 0.50
-note = "Local realism falsified"
+  [[review.phases.claims]]
+  id = "p4_nonlocality"
+  prior = 0.96
+  prior_source = "Phase 3 belief of p3_nonlocality_confirmed = 0.96"
+  expected_belief = 0.99
 
-# Phase 4: Big Bell Test & Modern Applications (2016-2024)
-[[claims]]
-label = "p4_no_superluminal"
-prior = 0.50
-note = "No superluminal communication"
+  [[review.phases.claims]]
+  id = "p4_local_realism"
+  prior = 0.12
+  prior_source = "Phase 3 belief of p3_local_realism = 0.12"
+  expected_belief = 0.05
 
-[[claims]]
-label = "p4_no_signaling"
-prior = 0.50
-note = "No-signaling theorem"
+  [[review.phases.claims]]
+  id = "p4_loophole_free"
+  prior = 0.93
+  prior_source = "Phase 3 belief of p3_loophole_free = 0.93"
+  expected_belief = 0.97
 
-[[claims]]
-label = "p4_causality_preserved"
-prior = 0.50
-note = "Causality is preserved"
+  [[review.phases.claims]]
+  id = "p4_freedom_of_choice"
+  prior = 0.50
+  prior_source = "leaf node, new evidence from Big Bell + Cosmic Bell"
+  expected_belief = 0.95
 
-[[claims]]
-label = "p4_big_bell_human"
-prior = 0.50
-note = "Big Bell Test 2017"
+  [[review.phases.claims]]
+  id = "p4_no_signaling"
+  prior = 0.50
+  prior_source = "leaf node, theoretical principle"
+  expected_belief = 0.98
 
-[[claims]]
-label = "p4_cosmic_bell"
-prior = 0.50
-note = "Cosmic Bell Test 2017"
+  [[review.phases.claims]]
+  id = "p4_no_ftl"
+  prior = 0.50
+  prior_source = "leaf node, deduction from no-signaling"
+  expected_belief = 0.98
 
-[[claims]]
-label = "p4_freedom_closed"
-prior = 0.50
-note = "Freedom-of-choice loophole closed"
+  [[review.phases.claims]]
+  id = "p4_qit_viable"
+  prior = 0.50
+  prior_source = "leaf node, application analysis"
+  expected_belief = 0.97
 
-[[claims]]
-label = "p4_nobel_2022"
-prior = 0.50
-note = "2022 Nobel Prize"
-
-[[claims]]
-label = "p4_quantum_technology"
-prior = 0.50
-note = "Quantum technology applications"
-
-[[claims]]
-label = "p4_free_will_irrelevant"
-prior = 0.50
-note = "Free will debate irrelevant to results"
+  [[review.phases.claims]]
+  id = "p4_consensus"
+  prior = 0.50
+  prior_source = "leaf node, Nobel + community acceptance"
+  expected_belief = 0.99
