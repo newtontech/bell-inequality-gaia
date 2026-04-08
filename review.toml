@@ -1,0 +1,200 @@
+# Review configuration for bell-inequality-gaia
+# All priors set to 0.50 as per project requirements
+
+[review]
+name = "bell-inequality-gaia-review"
+description = "Review of the formalized reasoning chain from EPR to Big Bell Test"
+
+# Phase 1: EPR Paradox (1935)
+[[claims]]
+label = "p1_criterion"
+prior = 0.50
+note = "EPR criterion of physical reality"
+
+[[claims]]
+label = "p1_position_reality"
+prior = 0.50
+note = "Position as element of reality"
+
+[[claims]]
+label = "p1_momentum_reality"
+prior = 0.50
+note = "Momentum as element of reality"
+
+[[claims]]
+label = "p1_completeness_criterion"
+prior = 0.50
+note = "Completeness criterion"
+
+[[claims]]
+label = "p1_qm_incomplete"
+prior = 0.50
+note = "QM is incomplete"
+
+[[claims]]
+label = "p1_locality"
+prior = 0.50
+note = "Locality principle"
+
+[[claims]]
+label = "p1_reality"
+prior = 0.50
+note = "Physical reality exists independently"
+
+[[claims]]
+label = "p1_hidden_variables"
+prior = 0.50
+note = "Hidden variables exist"
+
+[[claims]]
+label = "p1_epr_conclusion"
+prior = 0.50
+note = "EPR main conclusion"
+
+[[claims]]
+label = "p1_qm_local_realism_consistent"
+prior = 0.50
+note = "Local realism compatible with 1935 experiments"
+
+# Phase 2: Bell's Theorem (1964)
+[[claims]]
+label = "p2_lhv_theory"
+prior = 0.50
+note = "Local hidden variable theory definition"
+
+[[claims]]
+label = "p2_bell_inequality"
+prior = 0.50
+note = "Bell's inequality formulation"
+
+[[claims]]
+label = "p2_qm_violates_bell"
+prior = 0.50
+note = "QM violates Bell's inequality"
+
+[[claims]]
+label = "p2_qm_prediction"
+prior = 0.50
+note = "QM predicts S = 2√2"
+
+[[claims]]
+label = "p2_lhv_limit"
+prior = 0.50
+note = "LHV predicts S ≤ 2"
+
+[[claims]]
+label = "p2_incompatibility"
+prior = 0.50
+note = "QM and local realism incompatible"
+
+[[claims]]
+label = "p2_experiment_decides"
+prior = 0.50
+note = "Experiment can resolve the question"
+
+[[claims]]
+label = "p2_no_go_theorem"
+prior = 0.50
+note = "Bell's theorem as no-go theorem"
+
+# Phase 3: CHSH Experimental Verification (1969-2015)
+[[claims]]
+label = "p3_chsh_inequality"
+prior = 0.50
+note = "CHSH inequality S ≤ 2"
+
+[[claims]]
+label = "p3_chsh_qm_value"
+prior = 0.50
+note = "QM predicts S = 2√2"
+
+[[claims]]
+label = "p3_aspect_violation"
+prior = 0.50
+note = "Aspect 1982 violated CHSH"
+
+[[claims]]
+label = "p3_detection_loophole"
+prior = 0.50
+note = "Detection loophole description"
+
+[[claims]]
+label = "p3_locality_loophole"
+prior = 0.50
+note = "Locality loophole description"
+
+[[claims]]
+label = "p3_freedom_loophole"
+prior = 0.50
+note = "Freedom-of-choice loophole"
+
+[[claims]]
+label = "p3_hensen_loophole_free"
+prior = 0.50
+note = "Delft 2015 loophole-free"
+
+[[claims]]
+label = "p3_nist_loophole_free"
+prior = 0.50
+note = "NIST 2015 loophole-free"
+
+[[claims]]
+label = "p3_vienna_loophole_free"
+prior = 0.50
+note = "Vienna 2015 loophole-free"
+
+[[claims]]
+label = "p3_convergent_evidence"
+prior = 0.50
+note = "Multiple experiments converge"
+
+[[claims]]
+label = "p3_local_realism_falsified"
+prior = 0.50
+note = "Local realism falsified"
+
+# Phase 4: Big Bell Test & Modern Applications (2016-2024)
+[[claims]]
+label = "p4_no_superluminal"
+prior = 0.50
+note = "No superluminal communication"
+
+[[claims]]
+label = "p4_no_signaling"
+prior = 0.50
+note = "No-signaling theorem"
+
+[[claims]]
+label = "p4_causality_preserved"
+prior = 0.50
+note = "Causality is preserved"
+
+[[claims]]
+label = "p4_big_bell_human"
+prior = 0.50
+note = "Big Bell Test 2017"
+
+[[claims]]
+label = "p4_cosmic_bell"
+prior = 0.50
+note = "Cosmic Bell Test 2017"
+
+[[claims]]
+label = "p4_freedom_closed"
+prior = 0.50
+note = "Freedom-of-choice loophole closed"
+
+[[claims]]
+label = "p4_nobel_2022"
+prior = 0.50
+note = "2022 Nobel Prize"
+
+[[claims]]
+label = "p4_quantum_technology"
+prior = 0.50
+note = "Quantum technology applications"
+
+[[claims]]
+label = "p4_free_will_irrelevant"
+prior = 0.50
+note = "Free will debate irrelevant to results"
