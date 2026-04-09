@@ -1,0 +1,18 @@
+[project]
+name = "1935-bohr-reply-gaia"
+version = "0.1.0"
+description = "Bohr's Reply (1935): Complementarity response to EPR"
+readme = "README.md"
+authors = [
+    { name = "OpenClaw Bot", email = "bot@openclaw.dev" }
+]
+requires-python = ">=3.13"
+dependencies = []
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.gaia]
+type = "knowledge-package"
+uuid = "2580cf13-3d86-4b71-b63b-4ce75ab1bfc9"
