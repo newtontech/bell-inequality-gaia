@@ -1,0 +1,18 @@
+[project]
+name = "1935-epr-paradox-gaia"
+version = "0.1.0"
+description = "EPR Paradox (1935): Can Quantum-Mechanical Description of Physical Reality Be Considered Complete?"
+readme = "README.md"
+authors = [
+    { name = "OpenClaw Bot", email = "bot@openclaw.dev" }
+]
+requires-python = ">=3.13"
+dependencies = []
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.gaia]
+type = "knowledge-package"
+uuid = "0b929ea5-9ccb-4d28-80ab-5acca53eeb99"
