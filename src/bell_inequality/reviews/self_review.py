@@ -1,4 +1,4 @@
-"""Review sidecar for the EPR Paradox and Bohr's Reply formalization.
+"""Review sidecar for EPR, Bohr, and Bell formalization.
 
 Priors are assigned to independent (leaf) premises. Derived claims get
 uninformative priors (0.5) from the inference engine.
@@ -88,6 +88,56 @@ from ..s3_bohr_reply import (
     _strat_reality_revision,
     _strat_alternative_classical_realism,
     _strat_isolation_reality,
+)
+from ..s4_bell_1964 import (
+    # Settings
+    s_singlet_spin_state,
+    s_locality_assumption_bell,
+    s_hidden_variable_formalism,
+    s_qm_correlation_singlet,
+    # Core claims
+    c_epr_motivation_hidden_variables,
+    c_locality_creates_difficulty,
+    c_nonlocal_hidden_variable_exists,
+    c_singlet_perfect_anticorrelation,
+    c_locality_implies_predetermination,
+    c_hidden_variables_complete_specification,
+    c_locality_constraint_formal,
+    c_local_hidden_correlation_form,
+    c_bell_inequality,
+    c_qm_correlation_function,
+    c_local_theory_nonstationary,
+    c_qm_violates_bell_inequality,
+    c_local_hv_incompatible_with_qm,
+    c_approximation_impossible,
+    c_locality_lorentz_invariance_conflict,
+    c_bell_result_generalizes,
+    c_time_varying_settings_crucial,
+    c_bell_theorem,
+    # Alternatives
+    alt_locality_violates_qm,
+    alt_superdeterminism,
+    alt_retrocausality,
+    # Contradictions
+    _qm_violates_bell,
+    _locality_vs_qm_predictions,
+    # Strategies
+    _strat_epr_to_hv,
+    _strat_locality_to_predetermination,
+    _strat_predetermination_to_hv_formalism,
+    _strat_hv_locality_to_bell_form,
+    _strat_local_form_to_inequality,
+    _strat_qm_to_correlation,
+    _strat_local_theories_nonstationary,
+    _strat_qm_violates_inequality,
+    _strat_main_theorem,
+    _strat_locality_lorentz_implication,
+    _strat_locality_essential,
+    _strat_approximation_impossible,
+    _strat_superdeterminism_alternative,
+    _strat_retrocausality_alternative,
+    _strat_generalization,
+    _strat_experimental_implications,
 )
 
 REVIEW = ReviewBundle(
@@ -663,6 +713,396 @@ REVIEW = ReviewBundle(
             justification="EPR argue from mechanical isolation to independent reality. "
             "Bohr counters that this ignores experimental context. The debate hinges on "
             "the meaning of 'reality' in QM.",
+        ),
+
+        # ============================================================
+        # Leaf premises — priors from s4_bell_1964.py (Bell's theorem)
+        # ============================================================
+
+        # EPR motivates hidden variables
+        review_claim(
+            c_epr_motivation_hidden_variables,
+            prior=0.70,
+            judgment="supporting",
+            justification="Accurate historical statement: EPR argued QM is incomplete and "
+            "additional variables could restore causality and locality. Bell's paper responds "
+            "directly to this motivation.",
+        ),
+
+        # Locality creates the essential difficulty
+        review_claim(
+            c_locality_creates_difficulty,
+            prior=0.85,
+            judgment="supporting",
+            justification="Bell correctly identifies locality as the key constraint that makes "
+            "hidden variable theories incompatible with QM predictions. This is the core insight.",
+        ),
+
+        # Nonlocal hidden variable theory exists (Bohm 1952)
+        review_claim(
+            c_nonlocal_hidden_variable_exists,
+            prior=0.90,
+            judgment="supporting",
+            justification="David Bohm's 1952 hidden variable theory is explicitly constructed "
+            "and demonstrably nonlocal. This is a historical fact and key motivation for Bell's work.",
+        ),
+
+        # Singlet state perfect anticorrelation
+        review_claim(
+            c_singlet_perfect_anticorrelation,
+            prior=0.95,
+            judgment="supporting",
+            justification="Standard QM result for the singlet state. Measuring spin along the "
+            "same direction on both particles always gives opposite results. Mathematically proven.",
+        ),
+
+        # Singlet spin state definition
+        review_claim(
+            s_singlet_spin_state,
+            prior=0.95,
+            judgment="supporting",
+            justification="Standard quantum mechanical definition of the singlet state. "
+            "The formalism is uncontroversial.",
+        ),
+
+        # QM correlation function
+        review_claim(
+            s_qm_correlation_singlet,
+            prior=0.95,
+            judgment="supporting",
+            justification="The QM prediction E(a,b) = -a·b is a standard calculation. "
+            "Experimentally verified in countless tests.",
+        ),
+
+        # Bell locality assumption
+        review_claim(
+            s_locality_assumption_bell,
+            prior=0.70,
+            judgment="tentative",
+            justification="This is the key assumption that Bell tests. It represents Einstein's "
+            "separability principle. Moderate prior because the whole point is to test it experimentally.",
+        ),
+
+        # Hidden variable formalism
+        review_claim(
+            s_hidden_variable_formalism,
+            prior=0.70,
+            judgment="tentative",
+            justification="This is a formal framework for hidden variable theories. The "
+            "assumption that such theories exist is what Bell's theorem tests.",
+        ),
+
+        # QM correlation function claim
+        review_claim(
+            c_qm_correlation_function,
+            prior=0.95,
+            judgment="supporting",
+            justification="Direct calculation from the singlet state formalism. The cosine "
+            "dependence on angle is a central QM prediction, well-verified experimentally.",
+        ),
+
+        # Locality implies predetermination
+        review_claim(
+            c_locality_implies_predetermination,
+            prior=0.75,
+            judgment="supporting",
+            justification="Bell's logical inference: given perfect anticorrelation (@c_singlet_perfect_anticorrelation) "
+            "and locality (setting at 1 doesn't affect result at 2), the result at 2 must be "
+            "predetermined. This is the EPR-Bell argument structure.",
+        ),
+
+        # Hidden variables as complete specification
+        review_claim(
+            c_hidden_variables_complete_specification,
+            prior=0.65,
+            judgment="tentative",
+            justification="The formal definition of hidden variables. The prior reflects that "
+            "this is a theoretical construct whose physical meaning is debated.",
+        ),
+
+        # Formal locality constraint
+        review_claim(
+            c_locality_constraint_formal,
+            prior=0.75,
+            judgment="supporting",
+            justification="The mathematical expression of Bell's locality assumption. "
+            "The constraint that outcomes depend only on local settings and λ is clear.",
+        ),
+
+        # Local hidden correlation form
+        review_claim(
+            c_local_hidden_correlation_form,
+            prior=0.85,
+            judgment="supporting",
+            justification="This is the mathematical consequence of the locality constraint. "
+            "If outcomes depend only on local variables, the correlation must take this form.",
+        ),
+
+        # Bell inequality (mathematical theorem)
+        review_claim(
+            c_bell_inequality,
+            prior=0.95,
+            judgment="supporting",
+            justification="Bell's inequality is a mathematical theorem derived from the "
+            "local hidden variable form. The derivation is rigorous and uncontroversial.",
+        ),
+
+        # Local theories give non-stationary correlations
+        review_claim(
+            c_local_theory_nonstationary,
+            prior=0.85,
+            judgment="supporting",
+            justification="Mathematical result: functions satisfying Bell's inequality "
+            "cannot be stationary at -1. This contrasts with the smooth QM correlation.",
+        ),
+
+        # QM violates Bell's inequality
+        review_claim(
+            c_qm_violates_bell_inequality,
+            prior=0.95,
+            judgment="supporting",
+            justification="Both the mathematical claim (for specific angles) and its "
+            "experimental verification (Aspect, Zeilinger, Weihs, etc.) are extremely well-established.",
+        ),
+
+        # Local HV incompatible with QM (Bell's main result)
+        review_claim(
+            c_local_hv_incompatible_with_qm,
+            prior=0.90,
+            judgment="supporting",
+            justification="Bell's main theorem. Mathematical proof that no local hidden "
+            "variable theory can reproduce all QM predictions. Overwhelmingly supported by experiment.",
+        ),
+
+        # Approximation impossible
+        review_claim(
+            c_approximation_impossible,
+            prior=0.85,
+            judgment="supporting",
+            justification="Bell's argument that even approximate agreement fails for local "
+            "hidden variables. The violation is not a small effect but significant.",
+        ),
+
+        # Locality-Lorentz invariance conflict
+        review_claim(
+            c_locality_lorentz_invariance_conflict,
+            prior=0.80,
+            judgment="supporting",
+            justification="Bell's conclusion: any hidden variable theory reproducing QM must "
+            "have instantaneous nonlocality, violating Lorentz invariance. This is a direct "
+            "consequence of his theorem.",
+        ),
+
+        # Bell result generalizes
+        review_claim(
+            c_bell_result_generalizes,
+            prior=0.85,
+            judgment="supporting",
+            justification="Bell correctly notes that the theorem extends beyond spin-1/2 "
+            "to any quantum system with two-dimensional subspaces.",
+        ),
+
+        # Time-varying settings crucial
+        review_claim(
+            c_time_varying_settings_crucial,
+            prior=0.85,
+            judgment="supporting",
+            justification="Bell's insight about the need for experiments with settings changed "
+            "during particle flight. This is exactly what modern loophole-free tests do.",
+        ),
+
+        # Bell's theorem (main conclusion)
+        review_claim(
+            c_bell_theorem,
+            prior=0.90,
+            judgment="supporting",
+            justification="The central result: no local hidden variable theory can reproduce "
+            "all QM predictions. Mathematical theorem plus extensive experimental verification.",
+        ),
+
+        # ============================================================
+        # Alternatives from Bell's module
+        # ============================================================
+
+        # Alternative: QM itself is nonlocal
+        review_claim(
+            alt_locality_violates_qm,
+            prior=0.60,
+            judgment="tentative",
+            justification="One response to Bell's theorem: accept that QM is inherently nonlocal. "
+            "This is the view of many physicists after Bell. Moderate prior reflecting the "
+            "ongoing debate about the meaning of quantum nonlocality.",
+        ),
+
+        # Alternative: Superdeterminism
+        review_claim(
+            alt_superdeterminism,
+            prior=0.25,
+            judgment="tentative",
+            justification="Superdeterminism rejects the 'free choice' or 'no-conspiracy' assumption. "
+            "Low prior because it undermines scientific methodology and has no independent support, "
+            "but it remains a logical possibility.",
+        ),
+
+        # Alternative: Retrocausality
+        review_claim(
+            alt_retrocausality,
+            prior=0.30,
+            judgment="tentative",
+            justification="Retrocausal theories offer another way around Bell's theorem. "
+            "Low to moderate prior: mathematically possible but requires radical revisions "
+            "to our concept of causality with little empirical support.",
+        ),
+
+        # ============================================================
+        # Strategy reviews — from Bell's module
+        # ============================================================
+
+        # Strategy 1: EPR to hidden variables
+        review_strategy(
+            _strat_epr_to_hv,
+            judgment="formalized",
+            justification="EPR's incompleteness argument (@c_qm_incomplete) directly motivates "
+            "the search for hidden variables (@c_epr_motivation_hidden_variables). Bohr's "
+            "alternative is that QM is complete (@c_qm_is_complete).",
+        ),
+
+        # Strategy 2: Locality to predetermination
+        review_strategy(
+            _strat_locality_to_predetermination,
+            judgment="formalized",
+            justification="Bell's key inference: perfect anticorrelation (@c_singlet_perfect_anticorrelation) "
+            "plus locality (@c_locality_constraint_formal) implies predetermination "
+            "(@c_locality_implies_predetermination). This is the EPR-Bell argument structure.",
+        ),
+
+        # Strategy 3: Predetermination to HV formalism
+        review_strategy(
+            _strat_predetermination_to_hv_formalism,
+            judgment="formalized",
+            justification="If results are predetermined despite the wave function not specifying "
+            "them (@c_locality_implies_predetermination), then hidden variables must exist "
+            "(@c_hidden_variables_complete_specification). Direct logical step.",
+        ),
+
+        # Strategy 4: HV + locality → Bell form
+        review_strategy(
+            _strat_hv_locality_to_bell_form,
+            judgment="formalized",
+            justification="Hidden variables (@c_hidden_variables_complete_specification) plus "
+            "locality (@c_locality_constraint_formal) mathematically imply the local "
+            "correlation form (@c_local_hidden_correlation_form). Pure deduction.",
+        ),
+
+        # Strategy 5: Local form → Bell inequality
+        review_strategy(
+            _strat_local_form_to_inequality,
+            judgment="formalized",
+            justification="The mathematical derivation of Bell's inequality (@c_bell_inequality) "
+            "from the local hidden variable form (@c_local_hidden_correlation_form). "
+            "Rigorous mathematical proof.",
+        ),
+
+        # Strategy 6: QM formalism → correlation
+        review_strategy(
+            _strat_qm_to_correlation,
+            judgment="formalized",
+            justification="Standard QM calculation: singlet state (@s_singlet_spin_state) "
+            "yields correlation -a·b (@c_qm_correlation_function). Uncontroversial.",
+        ),
+
+        # Strategy 7: Local theories non-stationary
+        review_strategy(
+            _strat_local_theories_nonstationary,
+            judgment="formalized",
+            justification="Mathematical property: functions satisfying Bell's inequality "
+            "(@c_bell_inequality) cannot be stationary at -1, unlike the QM prediction. "
+            "This is key to Bell's argument.",
+        ),
+
+        # Strategy 8: QM violates Bell's inequality
+        review_strategy(
+            _strat_qm_violates_inequality,
+            judgment="formalized",
+            justification="The heart of Bell's theorem: QM predictions (@c_qm_correlation_function) "
+            "violate Bell's inequality (@c_qm_violates_bell_inequality). Therefore local "
+            "hidden variables cannot reproduce QM (@c_local_hv_incompatible_with_qm). "
+            "The alternative is QM nonlocality (@alt_locality_violates_qm). "
+            "Extremely well-supported by experiment.",
+        ),
+
+        # Strategy 9: Main theorem
+        review_strategy(
+            _strat_main_theorem,
+            judgment="formalized",
+            justification="Synthesizes the entire argument: local form (@c_local_hidden_correlation_form) → "
+            "Bell inequality (@c_bell_inequality) → QM violation (@c_qm_violates_bell_inequality) → "
+            "incompatibility (@c_bell_theorem). Bell's main result.",
+        ),
+
+        # Strategy 10: Locality-Lorentz implications
+        review_strategy(
+            _strat_locality_lorentz_implication,
+            judgment="formalized",
+            justification="Since local HV cannot work (@c_bell_theorem), any HV theory that "
+            "reproduces QM must be nonlocal. This nonlocality implies instantaneous influence "
+            "and Lorentz invariance violation (@c_locality_lorentz_invariance_conflict). "
+            "Important implication of Bell's theorem.",
+        ),
+
+        # Strategy 11: Locality as essential difficulty
+        review_strategy(
+            _strat_locality_essential,
+            conditional_probability=0.85,
+            judgment="formalized",
+            justification="Synthesizes Bell's insight: locality is the essential difficulty "
+            "(@c_locality_creates_difficulty). You can have locality (and lose QM agreement) "
+            "or QM agreement (and lose locality), but not both.",
+        ),
+
+        # Strategy 12: Approximation impossible
+        review_strategy(
+            _strat_approximation_impossible,
+            judgment="formalized",
+            justification="The violation of Bell's inequality is not a small effect that can "
+            "be fixed by approximation. There's a fundamental gap (@c_approximation_impossible). "
+            "Important for understanding why Bell's theorem is robust.",
+        ),
+
+        # Strategy 13: Superdeterminism alternative
+        review_strategy(
+            _strat_superdeterminism_alternative,
+            judgment="formalized",
+            justification="Bell's theorem assumes settings can be chosen independently of λ. "
+            "If this fails (superdeterminism, @alt_superdeterminism), local HV could work. "
+            "Low prior because this undermines scientific methodology.",
+        ),
+
+        # Strategy 14: Retrocausality alternative
+        review_strategy(
+            _strat_retrocausality_alternative,
+            judgment="formalized",
+            justification="Retrocausal theories (@alt_retrocausality) offer another loophole. "
+            "Allow backwards-in-time influence instead of nonlocality. Mathematically possible "
+            "but philosophically radical.",
+        ),
+
+        # Strategy 15: Generalization beyond spin
+        review_strategy(
+            _strat_generalization,
+            judgment="formalized",
+            justification="Bell correctly notes the theorem generalizes beyond spin-1/2 "
+            "(@c_bell_result_generalizes). Any system with appropriate subspaces exhibits "
+            "the same incompatibility.",
+        ),
+
+        # Strategy 16: Experimental implications
+        review_strategy(
+            _strat_experimental_implications,
+            judgment="formalized",
+            justification="Bell identifies the crucial experimental test: change settings during "
+            "particle flight (@c_time_varying_settings_crucial). This prevents light-speed "
+            "communication. Exactly what modern loophole-free tests do.",
         ),
     ],
 )

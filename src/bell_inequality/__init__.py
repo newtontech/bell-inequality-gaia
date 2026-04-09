@@ -1,17 +1,21 @@
-"""Bell Inequality Gaia — EPR Paradox and Bohr's Reply Formalization
+"""Bell Inequality Gaia — EPR Paradox to Bell's Theorem
 
-Formalization of the 1935 EPR-Bohr debate:
+Formalization of the historical development from EPR (1935) through
+Bell's Theorem (1964) to modern loophole-free Bell tests:
 
 - Einstein, Podolsky, and Rosen (1935): "Can Quantum-Mechanical Description
   of Physical Reality Be Considered Complete?" Physical Review, 47, 777-780.
 
 - Bohr, N. (1935): "Can Quantum-Mechanical Description of Physical Reality
   be Considered Complete?" Physical Review, 48, 696-702.
+
+- Bell, J.S. (1964): "On the Einstein Podolsky Rosen Paradox" Physics 1, 195-200.
 """
 
 from .motivation import *
 from .s2_epr_argument import *
 from .s3_bohr_reply import *
+from .s4_bell_1964 import *
 
 __all__ = [
     # From motivation.py
@@ -36,4 +40,23 @@ __all__ = [
     "c_mechanical_disturbance_vs_influence",
     "c_object_instrument_discrimination",
     "c_reality_revision_required",
+    # From s4_bell_1964.py
+    "c_epr_motivation_hidden_variables",
+    "c_locality_creates_difficulty",
+    "c_nonlocal_hidden_variable_exists",
+    "c_singlet_perfect_anticorrelation",
+    "c_locality_implies_predetermination",
+    "c_hidden_variables_complete_specification",
+    "c_locality_constraint_formal",
+    "c_local_hidden_correlation_form",
+    "c_bell_inequality",
+    "c_qm_correlation_function",
+    "c_local_theory_nonstationary",
+    "c_qm_violates_bell_inequality",
+    "c_local_hv_incompatible_with_qm",
+    "c_approximation_impossible",
+    "c_locality_lorentz_invariance_conflict",
+    "c_bell_result_generalizes",
+    "c_time_varying_settings_crucial",
+    "c_bell_theorem",
 ]
