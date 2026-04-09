@@ -1,0 +1,3 @@
+将你注意的点写到AGENTS.md（太过通用的不用写）   
+https://github.com/newtontech/bell-inequality-gaia 用这个git来为本项目提供同步到远端的途径，注意不要删除内容，如果有冲突就合并，保留本地和远端的。根据语言意思合并。注意pdf不要打包到对应的git仓库中避免侵权，而提取出来的文字和图片等可以。要写gitignore将/home/yhm/desktop/code/bell-inequality-gaia/.playwright-mcp 类似的无用文件夹都ignore。以云端的README.md为主。  
+对于/home/yhm/desktop/code/bell-inequality-gaia/artifacts 下的各个论文，都提取为文字和图片，按照时间顺序，进行formalization，并生成相应的gaia知识包。以https://github.com/newtontech/bell-inequality-gaia?tab=readme-ov-file#core-innovation-chained-belief-propagation 为主要的目标。不需要对README.md进行大范围的更改。

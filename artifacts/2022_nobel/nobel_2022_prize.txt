@@ -1,0 +1,176 @@
+================================================================================
+THE NOBEL PRIZE IN PHYSICS 2022
+================================================================================
+
+Awarded jointly to:
+  - Alain Aspect
+  - John F. Clauser
+  - Anton Zeilinger
+
+"For experiments with entangled photons, establishing the violation of Bell
+inequalities and pioneering quantum information science"
+
+Source: https://www.nobelprize.org/prizes/physics/2022/summary/
+Scientific Background PDF:
+  https://www.nobelprize.org/uploads/2023/10/advanced-physicsprize2022-4.pdf
+  (also downloaded as nobel_2022_scientific_background.pdf in this directory)
+
+================================================================================
+SCIENTIFIC BACKGROUND
+================================================================================
+
+1. BELL'S THEOREM AND CHSH
+----------------------------
+Bell's theorem shows that correlations predicted by quantum mechanics for
+certain entangled states cannot be reproduced by any local hidden-variable
+theory. The CHSH inequality (Clauser, Horne, Shimony, Holt, 1969) was
+explicitly proposed to suit photon-polarization experiments:
+
+  S = E(a,b) - E(a,b') + E(a',b) + E(a',b')
+
+The local-realist bound is S <= 2; quantum entanglement can produce
+S = 2*sqrt(2) ~ 2.828.
+
+2. JOHN F. CLAUSER -- EARLY CHSH / FREEDMAN-CLAUSER EXPERIMENTS (1972-1976)
+-------------------------------------------------------------------------------
+A. Key experiments:
+   - Freedman and Clauser (1972): First conclusive photon Bell test
+   - Follow-up experiments published in 1974 and 1976
+
+B. Technical setup:
+   The 1972 Freedman-Clauser experiment used photon pairs produced by a
+   radiative atomic cascade in calcium (4p2 1S0 -> 4s4p 1P1 -> 4s2 1S0).
+   Calcium atoms were excited in an atomic beam using ultraviolet light from
+   a deuterium discharge lamp. Photon detection used single-channel polarizers
+   and photomultiplier tubes arranged to record coincidences. Later experiments
+   (1974, 1976) used similar cascade sources (mercury in 1976) with variations
+   in excitation methods.
+
+C. Results:
+   - 1972: Violation of local-realism by ~6.3-6.5 standard deviations
+   - 1976 (mercury cascade): Violation of ~4.1 standard deviations
+   - Results disagreed with local-realist bounds and agreed with QM predictions
+
+D. Loopholes:
+   - Low detection efficiencies (fair-sampling/detection loophole remained)
+   - Did not close the locality loophole in the stricter sense
+   - Used polarizer-removal protocol and CH-type formulations
+
+E. Significance:
+   First clear empirical refutation of local-realist predictions in photon
+   polarization correlations. Converted Bell's theoretical insights into
+   concrete laboratory constraints.
+
+3. ALAIN ASPECT -- TWO-CHANNEL AND TIME-VARYING-ANALYZER EXPERIMENTS (1980-1982)
+----------------------------------------------------------------------------------
+A. Key experiments:
+   - 1981 PRL (Phys. Rev. Lett. 47, 460): Two-channel polarizer experiment
+   - 1982: Variable-analyzer experiment with fast switching
+
+B. Technical setup:
+   Used calcium radiative-cascade photon pairs with improved production via
+   two-photon excitation (two tunable lasers). Introduced two-channel
+   polarizers (two output channels per measurement arm). The 1982 experiment
+   implemented acousto-optical switches operating at ~50 MHz followed by
+   linear polarizers, producing polarization-orientation jumps much shorter
+   than the photon transit time. Source-to-polarizer separation: ~6-6.5 m.
+
+C. Results:
+   - 1982 time-varying-analyzer experiment: violation by ~5 standard deviations
+   - S_exp = 0.101 +/- 0.020 (in a formulation where local bound is S <= 0)
+   - Typical coincidence rates: ~240 counts/s (null-delay), ~150 true
+     coincidences/s
+
+D. Loopholes addressed:
+   - Locality substantially improved via in-flight analyzer switching
+   - Two-channel detection improved over single-channel designs
+   - Did NOT fully close the detection/fair-sampling loophole
+   - Randomness of setting choices was not fully sufficient for
+     freedom-of-choice closure
+
+E. Significance:
+   Demonstrated that entanglement-based violations are robust under improved
+   detection and setting changes during photon flight. Established experimental
+   techniques (two-channel analyzers, fast switching, cascaded excitation) used
+   in later quantum-information experiments.
+
+4. ANTON ZEILINGER -- TELEPORTATION, ENTANGLEMENT SWAPPING, AND THE BIG BELL TEST
+   (1997-2016)
+----------------------------------------------------------------------------------
+A. Key experiments:
+   - 1997: First experimental quantum teleportation (Bouwmeester et al.)
+   - 1998: Entanglement swapping (Pan et al.)
+   - 2016: The BIG Bell Test (30 November 2016)
+
+B. Technical setup:
+   Teleportation experiments used spontaneous parametric down-conversion
+   (type-II SPDC) in nonlinear BBO crystals pumped by ultrafast UV pulses
+   (200 fs, 490 nm) to produce polarization-entangled photon pairs.
+   Bell-state analysis was achieved using two-photon interference.
+   Entanglement swapping used similar SPDC sources with joint Bell-measurements
+   projecting independent photons into entangled states.
+
+   The BIG Bell Test coordinated ~13 Bell experiments across multiple platforms
+   (photons, atoms, superconducting devices). Human volunteers worldwide
+   supplied 97,347,490 binary choices streamed in real time to laboratories
+   to select measurement settings.
+
+C. Results:
+   - Teleportation and swapping: demonstrated successful protocol fidelities
+     consistent with entanglement-enabled state transfer
+   - BIG Bell Test: ~97 million human-generated bits; day-of significance ~3
+     sigma; aggregate post-analysis significance exceeded 8 sigma
+
+D. Loopholes addressed:
+   - Teleportation/swapping established core quantum-information primitives
+   - BIG Bell Test targeted freedom-of-choice loophole via human inputs
+   - Zeilinger's group closed the locality constraint in late-1990s photon
+     experiments using fast quantum random-number generators
+
+E. Significance:
+   Pushed Bell tests from foundational demonstrations into practical toolkits
+   for quantum communication and network engineering. Realized core
+   quantum-information protocols: teleportation, entanglement swapping, dense
+   coding, entanglement-based cryptography.
+
+5. COMPARATIVE SUMMARY
+-----------------------
+Laureate    | Year(s)     | Source           | Key Result          | Loopholes
+------------|-------------|------------------|---------------------|------------------
+Clauser     | 1972,1976   | Atomic cascade   | ~6.5 sigma (1972)   | Detection, locality
+            |             | (Ca, Hg)         | ~4.1 sigma (1976)   | not fully closed
+------------|-------------|------------------|---------------------|------------------
+Aspect      | 1980-1982   | Ca cascade;      | ~5 sigma (1982)     | Addressed locality;
+            |             | acousto-optic    | S=0.101+/-0.020     | detection not fully
+            |             | switching ~50MHz |                     | closed
+------------|-------------|------------------|---------------------|------------------
+Zeilinger   | 1997-2016   | SPDC (BBO);      | Teleportation       | Freedom-of-choice
+            |             | coordinated      | fidelity confirmed; | (BIG Bell Test);
+            |             | human-choice     | BIG Bell Test       | enabled later
+            |             | inputs           | >8 sigma aggregate  | loophole closures
+
+6. OVERALL TRAJECTORY
+----------------------
+The experimental program recognized by the 2022 Nobel Prize progresses from:
+  - Clauser's first decisive photon Bell tests (early 1970s)
+  - Through Aspect's improvements addressing locality via fast switching (1980s)
+  - To Zeilinger's operational use of entanglement and large coordinated tests
+
+Together these experiments:
+  - Established robust violations of Bell inequalities under increasingly
+    stringent experimental conditions
+  - Seeded experimental techniques and protocols underpinning modern quantum
+    information science
+  - Progressed from foundational demonstration to practical application
+
+================================================================================
+References:
+  - Nobel Prize official page: https://www.nobelprize.org/prizes/physics/2022/
+  - Scientific Background PDF: advanced-physicsprize2022-4.pdf
+  - Freedman & Clauser (1972) PRL
+  - Aspect et al. (1981, 1982) PRL
+  - Bouwmeester et al. (1997) Nature
+  - Pan et al. (1998) PRL
+  - The BIG Bell Test Collaboration (2018) Nature 557, 212
+    arXiv: 1805.04431
+================================================================================

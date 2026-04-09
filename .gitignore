@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+
+# Gaia
+.gaia/
+
+# Playwright MCP
+.playwright-mcp/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# PDFs (copyright — only extracted text committed)
+artifacts/**/*.pdf
+
+# Extracted text and images ARE committed
+!artifacts/**/*.txt
+!artifacts/**/*.md
+!artifacts/**/*.png
+!artifacts/**/*.jpg
