@@ -1,4 +1,7 @@
-"""Review sidecar for EPR, Bohr, and Bell formalization.
+"""Review sidecar for EPR, Bohr, Bell, and CHSH formalization.
+
+Formalization of the historical chain from EPR (1935) through Bell's Theorem (1964)
+to the CHSH inequality (1969) that enabled experimental tests.
 
 Priors are assigned to independent (leaf) premises. Derived claims get
 uninformative priors (0.5) from the inference engine.
@@ -138,6 +141,62 @@ from ..s4_bell_1964 import (
     _strat_retrocausality_alternative,
     _strat_generalization,
     _strat_experimental_implications,
+)
+from ..s5_chsh_1969 import (
+    # Settings
+    s_chsh_particle_setup,
+    s_chsh_locality_formalism,
+    s_chsh_two_settings_per_side,
+    s_chsh_emergence_correlation,
+    s_chsh_calcium_cascade,
+    # Core claims
+    c_chsh_particle_pair_setup,
+    c_chsh_locality_assumption,
+    c_chsh_two_settings_claim,
+    c_chsh_emergence_interpretation,
+    c_chsh_calcium_source,
+    c_chsh_generalizes_bell,
+    c_chsh_avoids_perfect_correlation,
+    c_chsh_inequality_form,
+    c_chsh_standard_form,
+    c_chsh_experimental_prediction,
+    c_qm_predicts_violation_chsh,
+    c_chsh_optimal_angles,
+    c_chsh_detector_efficiency_requirement,
+    c_chsh_efficiency_angle_tradeoff,
+    c_chsh_detection_assumption,
+    c_chsh_two_relative_orientations,
+    c_wu_shaknov_inadequate,
+    c_kocher_commins_inadequate,
+    c_chsh_proposed_experiment,
+    c_chsh_tsirelson_bound,
+    c_chsh_experimental_consequence,
+    c_chsh_general_beyond_photons,
+    c_chsh_detection_loophole,
+    # Alternatives
+    alt_chsh_detector_conspiracy,
+    alt_chsh_superdeterminism_settings,
+    # Contradictions
+    _chsh_qm_contradiction,
+    _chsh_local_hv_contradiction,
+    # Strategies
+    _strat_bell_to_chsh_motivation,
+    _strat_chsh_setup_formalism,
+    _strat_two_settings_to_chsh,
+    _strat_experimental_simplification,
+    _strat_experimental_prediction_form,
+    _strat_qm_to_chsh_violation,
+    _strat_optimal_angles_derivation,
+    _strat_efficiency_requirements,
+    _strat_efficiency_angle_tradeoff,
+    _strat_two_orientations_sufficient,
+    _strat_previous_experiments_inadequate,
+    _strat_tsirelson_bound,
+    _strat_experimental_locality_test,
+    _strat_generality_beyond_photons,
+    _strat_detection_loophole,
+    _strat_superdeterminism_chsh,
+    _strat_chsh_main_theorem,
 )
 
 REVIEW = ReviewBundle(
@@ -1103,6 +1162,406 @@ REVIEW = ReviewBundle(
             justification="Bell identifies the crucial experimental test: change settings during "
             "particle flight (@c_time_varying_settings_crucial). This prevents light-speed "
             "communication. Exactly what modern loophole-free tests do.",
+        ),
+
+        # ============================================================
+        # Leaf premises — priors from s5_chsh_1969.py (CHSH inequality)
+        # ============================================================
+
+        # CHSH particle setup
+        review_claim(
+            c_chsh_particle_pair_setup,
+            prior=0.95,
+            judgment="supporting",
+            justification="Standard description of a two-particle correlation experiment. "
+            "The formalism is uncontroversial.",
+        ),
+
+        # CHSH locality formalism
+        review_claim(
+            c_chsh_locality_assumption,
+            prior=0.75,
+            judgment="tentative",
+            justification="The locality assumption is what Bell's theorem tests. This "
+            "formalization is clear and represents the local hidden variable position.",
+        ),
+
+        # CHSH two settings per side
+        review_claim(
+            c_chsh_two_settings_claim,
+            prior=0.95,
+            judgment="supporting",
+            justification="This is a description of the experimental setup. The CHSH "
+            "configuration uses two measurement settings on each side.",
+        ),
+
+        # Emergence correlation for photons
+        review_claim(
+            c_chsh_emergence_interpretation,
+            prior=0.80,
+            judgment="supporting",
+            justification="A reasonable approach to photon polarization experiments. "
+            "Interpreting +1 as emergence from the polarizer is standard.",
+        ),
+
+        # Calcium cascade source
+        review_claim(
+            c_chsh_calcium_source,
+            prior=0.95,
+            judgment="supporting",
+            justification="The 6S₀-4³P₁-4S₀ cascade in calcium is a well-established "
+            "source of polarization-entangled photon pairs. Historically accurate.",
+        ),
+
+        # CHSH generalizes Bell
+        review_claim(
+            c_chsh_generalizes_bell,
+            prior=0.90,
+            judgment="supporting",
+            justification="Accurate historical and mathematical statement. CHSH removes "
+            "Bell's perfect correlation requirement, making experimental tests feasible.",
+        ),
+
+        # CHSH avoids perfect correlation
+        review_claim(
+            c_chsh_avoids_perfect_correlation,
+            prior=0.90,
+            judgment="supporting",
+            justification="Key innovation of CHSH: they assume P(b', b) = 1 - ε rather "
+            "than perfect correlation. This makes the inequality experimentally testable.",
+        ),
+
+        # CHSH inequality in general form
+        review_claim(
+            c_chsh_inequality_form,
+            prior=0.95,
+            judgment="supporting",
+            justification="Mathematical theorem derived from local hidden variable assumptions. "
+            "The derivation is rigorous.",
+        ),
+
+        # CHSH standard form |S| ≤ 2
+        review_claim(
+            c_chsh_standard_form,
+            prior=0.95,
+            judgment="supporting",
+            justification="The standard form of the CHSH inequality. Mathematically proven "
+            "consequence of local hidden variables.",
+        ),
+
+        # CHSH experimental prediction form
+        review_claim(
+            c_chsh_experimental_prediction,
+            prior=0.85,
+            judgment="supporting",
+            justification="Translation of the CHSH inequality into experimental counting rates. "
+            "The derivation is sound.",
+        ),
+
+        # QM predicts violation of CHSH
+        review_claim(
+            c_qm_predicts_violation_chsh,
+            prior=0.95,
+            judgment="supporting",
+            justification="Standard QM calculation for the calcium cascade. The prediction "
+            "S = 2√2 is well-established and experimentally verified.",
+        ),
+
+        # CHSH optimal angles
+        review_claim(
+            c_chsh_optimal_angles,
+            prior=0.95,
+            judgment="supporting",
+            justification="Mathematical result: for E = -cos(θ), the maximum of S occurs "
+            "at the specified angles. The calculation is straightforward.",
+        ),
+
+        # Detector efficiency requirements
+        review_claim(
+            c_chsh_detector_efficiency_requirement,
+            prior=0.90,
+            judgment="supporting",
+            justification="CHSH correctly identify that efficient detectors are needed. "
+            "The threshold condition is mathematically derived.",
+        ),
+
+        # Efficiency-angle tradeoff
+        review_claim(
+            c_chsh_efficiency_angle_tradeoff,
+            prior=0.90,
+            judgment="supporting",
+            justification="The trade-off between polarizer efficiency and collection angle "
+            "is a physical constraint. The relationship F₁(θ)F₂(θ) > 1/2 is derived.",
+        ),
+
+        # CHSH detection assumption
+        review_claim(
+            c_chsh_detection_assumption,
+            prior=0.60,
+            judgment="tentative",
+            justification="This assumption is necessary for the experimental prediction but "
+            "creates the 'detection loophole'. Moderate prior reflecting this caveat.",
+        ),
+
+        # Only two orientations needed
+        review_claim(
+            c_chsh_two_relative_orientations,
+            prior=0.95,
+            judgment="supporting",
+            justification="Mathematical observation: the four angles in CHSH correspond "
+            "to two relative orientations. Correct.",
+        ),
+
+        # Wu-Shaknov inadequate
+        review_claim(
+            c_wu_shaknov_inadequate,
+            prior=0.85,
+            judgment="supporting",
+            justification="CHSH correctly note that Compton polarimeters cannot provide "
+            "a decisive test. The physics argument is sound.",
+        ),
+
+        # Kocher-Commins inadequate
+        review_claim(
+            c_kocher_commins_inadequate,
+            prior=0.90,
+            judgment="supporting",
+            justification="Accurate assessment: the Kocher-Commins experiment measured only "
+            "at 0° and 90°, insufficient for CHSH.",
+        ),
+
+        # CHSH proposed experiment
+        review_claim(
+            c_chsh_proposed_experiment,
+            prior=0.90,
+            judgment="supporting",
+            justification="The proposal to extend Kocher-Commins with measurements at "
+            "22.5° and 67.5° is sound and historically significant.",
+        ),
+
+        # Tsirelson's bound
+        review_claim(
+            c_chsh_tsirelson_bound,
+            prior=0.95,
+            judgment="supporting",
+            justification="S = 2√2 is the maximum QM value for CHSH. This is Tsirelson's "
+            "bound, a fundamental result in quantum information.",
+        ),
+
+        # CHSH experimental consequence
+        review_claim(
+            c_chsh_experimental_consequence,
+            prior=0.90,
+            judgment="supporting",
+            justification="Correct: CHSH transforms the philosophical debate into an "
+            "experimental test. If S > 2, local hidden variables are ruled out.",
+        ),
+
+        # CHSH general beyond photons
+        review_claim(
+            c_chsh_general_beyond_photons,
+            prior=0.90,
+            judgment="supporting",
+            justification="Correct: CHSH applies to any two-level quantum system, not "
+            "just photons. The inequality is very general.",
+        ),
+
+        # CHSH detection loophole
+        review_claim(
+            c_chsh_detection_loophole,
+            prior=0.75,
+            judgment="supporting",
+            justification="Correct identification of the detection loophole. The assumption "
+            "that emergence probability is setting-independent is testable but non-trivial.",
+        ),
+
+        # ============================================================
+        # Alternatives from CHSH's module
+        # ============================================================
+
+        # Alternative: Detector conspiracy
+        review_claim(
+            alt_chsh_detector_conspiracy,
+            prior=0.30,
+            judgment="tentative",
+            justification="The detector conspiracy loophole. Low prior because it would "
+            "require fine-tuned correlation between hidden variables and detector response. "
+            "Possible but implausible.",
+        ),
+
+        # Alternative: CHSH with superdeterminism
+        review_claim(
+            alt_chsh_superdeterminism_settings,
+            prior=0.25,
+            judgment="tentative",
+            justification="Superdeterminism applied to CHSH. Low prior for the same "
+            "reasons as in Bell's theorem: it undermines scientific methodology.",
+        ),
+
+        # ============================================================
+        # Strategy reviews — from CHSH's module
+        # ============================================================
+
+        # Strategy 1: Bell to CHSH motivation
+        review_strategy(
+            _strat_bell_to_chsh_motivation,
+            judgment="formalized",
+            justification="Bell's theorem (@c_bell_theorem) requires perfect correlation "
+            "for experimental test (@c_bell_inequality). CHSH removes this requirement "
+            "(@c_chsh_generalizes_bell), making experiments feasible.",
+        ),
+
+        # Strategy 2: CHSH setup formalism
+        review_strategy(
+            _strat_chsh_setup_formalism,
+            judgment="formalized",
+            justification="The CHSH particle setup (@c_chsh_particle_pair_setup) with locality "
+            "(@c_chsh_locality_assumption) yields an inequality without perfect correlation "
+            "requirement (@c_chsh_avoids_perfect_correlation).",
+        ),
+
+        # Strategy 3: Two settings to CHSH
+        review_strategy(
+            _strat_two_settings_to_chsh,
+            judgment="formalized",
+            justification="Two settings per side (@c_chsh_two_settings_claim) plus "
+            "relaxed perfect correlation (@c_chsh_avoids_perfect_correlation) yields "
+            "the CHSH inequality (@c_chsh_inequality_form).",
+        ),
+
+        # Strategy 4: Experimental simplification
+        review_strategy(
+            _strat_experimental_simplification,
+            judgment="formalized",
+            justification="With constant detection rates and the detection assumption "
+            "(@c_chsh_detection_assumption), the general CHSH inequality "
+            "(@c_chsh_inequality_form) simplifies to |S| ≤ 2 (@c_chsh_standard_form).",
+        ),
+
+        # Strategy 5: Experimental prediction form
+        review_strategy(
+            _strat_experimental_prediction_form,
+            judgment="formalized",
+            justification="The standard CHSH inequality (@c_chsh_standard_form) is expressed "
+            "in terms of counting rates using the emergence correlation framework "
+            "(@c_chsh_emergence_interpretation), yielding testable predictions "
+            "(@c_chsh_experimental_prediction).",
+        ),
+
+        # Strategy 6: QM to CHSH violation
+        review_strategy(
+            _strat_qm_to_chsh_violation,
+            judgment="formalized",
+            justification="QM correlation (@c_qm_correlation_function) for the calcium "
+            "cascade (@c_chsh_calcium_source) predicts violation of CHSH with S = 2√2 "
+            "(@c_qm_predicts_violation_chsh, @c_chsh_tsirelson_bound).",
+        ),
+
+        # Strategy 7: Optimal angles derivation
+        review_strategy(
+            _strat_optimal_angles_derivation,
+            judgment="formalized",
+            justification="Maximizing S = E(a,b) - E(a,b') + E(a',b) + E(a',b') with "
+            "E = -cos(θ) (@c_qm_correlation_function) yields optimal angles "
+            "a=0°, a'=45°, b=22.5°, b'=67.5° (@c_chsh_optimal_angles).",
+        ),
+
+        # Strategy 8: Efficiency requirements
+        review_strategy(
+            _strat_efficiency_requirements,
+            judgment="formalized",
+            justification="QM predicts CHSH violation (@c_qm_predicts_violation_chsh) but "
+            "the experimental test (@c_chsh_experimental_prediction) requires minimum "
+            "detector efficiency and polarizer quality (@c_chsh_detector_efficiency_requirement).",
+        ),
+
+        # Strategy 9: Efficiency-angle tradeoff
+        review_strategy(
+            _strat_efficiency_angle_tradeoff,
+            judgment="formalized",
+            justification="The detector efficiency requirement (@c_chsh_detector_efficiency_requirement) "
+            "implies a trade-off: for given efficiency, there's an upper limit on "
+            "collection angle θ, and vice versa (@c_chsh_efficiency_angle_tradeoff).",
+        ),
+
+        # Strategy 10: Two orientations sufficient
+        review_strategy(
+            _strat_two_orientations_sufficient,
+            judgment="formalized",
+            justification="The optimal CHSH angles (@c_chsh_optimal_angles) correspond "
+            "to only two relative orientations: 22.5° and 67.5°. An experiment need "
+            "only measure at these two orientations (@c_chsh_two_relative_orientations).",
+        ),
+
+        # Strategy 11: Previous experiments inadequate
+        review_strategy(
+            _strat_previous_experiments_inadequate,
+            judgment="formalized",
+            justification="Previous experiments (Wu-Shaknov, Kocher-Commins) were "
+            "inadequate (@c_wu_shaknov_inadequate, @c_kocher_commins_inadequate). "
+            "CHSH proposed extending Kocher-Commins to include 22.5° and 67.5° measurements "
+            "(@c_chsh_proposed_experiment).",
+        ),
+
+        # Strategy 12: Tsirelson bound
+        review_strategy(
+            _strat_tsirelson_bound,
+            judgment="formalized",
+            justification="QM predicts S = 2√2 at optimal angles "
+            "(@c_qm_predicts_violation_chsh, @c_chsh_optimal_angles). This is the "
+            "maximum QM value, Tsirelson's bound (@c_chsh_tsirelson_bound).",
+        ),
+
+        # Strategy 13: Experimental locality test
+        review_strategy(
+            _strat_experimental_locality_test,
+            judgment="formalized",
+            justification="The CHSH inequality (@c_chsh_standard_form) and its QM violation "
+            "(@c_qm_predicts_violation_chsh) create an experimental test: if S > 2, "
+            "local hidden variables are ruled out; if S ≤ 2, they remain viable "
+            "(@c_chsh_experimental_consequence).",
+        ),
+
+        # Strategy 14: Generality beyond photons
+        review_strategy(
+            _strat_generality_beyond_photons,
+            judgment="formalized",
+            justification="CHSH requires only two settings and two outcomes per side "
+            "(@c_chsh_particle_pair_setup, @c_chsh_standard_form), not photon-specific "
+            "properties. Therefore it applies to various two-level systems "
+            "(@c_chsh_general_beyond_photons).",
+        ),
+
+        # Strategy 15: Detection loophole
+        review_strategy(
+            _strat_detection_loophole,
+            judgment="formalized",
+            justification="The CHSH derivation requires setting-independent emergence "
+            "probability (@c_chsh_detection_assumption). If this fails—e.g., if hidden "
+            "variables affect emergence in a setting-dependent way—local hidden variables "
+            "could potentially reproduce QM violations (@alt_chsh_detector_conspiracy). "
+            "This is the detection loophole (@c_chsh_detection_loophole).",
+        ),
+
+        # Strategy 16: Superdeterminism CHSH
+        review_strategy(
+            _strat_superdeterminism_chsh,
+            judgment="formalized",
+            justification="CHSH assumes settings can be chosen independently of λ. "
+            "If settings and λ are correlated (superdeterminism), the derivation "
+            "doesn't apply (@alt_chsh_superdeterminism_settings), offering a "
+            "potential loophole around the experimental consequences "
+            "(@c_chsh_experimental_consequence).",
+        ),
+
+        # Strategy 17: CHSH main theorem
+        review_strategy(
+            _strat_chsh_main_theorem,
+            judgment="formalized",
+            justification="Local hidden variables must satisfy |S| ≤ 2 "
+            "(@c_chsh_standard_form). QM predicts S = 2√2 at optimal settings "
+            "(@c_qm_predicts_violation_chsh, @c_chsh_tsirelson_bound). This "
+            "contradiction creates an experimental test (@c_chsh_experimental_consequence).",
         ),
     ],
 )

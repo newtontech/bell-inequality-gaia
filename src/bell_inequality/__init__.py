@@ -10,12 +10,16 @@ Bell's Theorem (1964) to modern loophole-free Bell tests:
   be Considered Complete?" Physical Review, 48, 696-702.
 
 - Bell, J.S. (1964): "On the Einstein Podolsky Rosen Paradox" Physics 1, 195-200.
+
+- Clauser, Horne, Shimony, and Holt (1969): "Proposed Experiment to Test Local
+  Hidden-Variable Theories" Physical Review Letters, 23, 880-884.
 """
 
 from .motivation import *
 from .s2_epr_argument import *
 from .s3_bohr_reply import *
 from .s4_bell_1964 import *
+from .s5_chsh_1969 import *
 
 __all__ = [
     # From motivation.py
@@ -59,4 +63,28 @@ __all__ = [
     "c_bell_result_generalizes",
     "c_time_varying_settings_crucial",
     "c_bell_theorem",
+    # From s5_chsh_1969.py
+    "c_chsh_particle_pair_setup",
+    "c_chsh_locality_assumption",
+    "c_chsh_two_settings_claim",
+    "c_chsh_emergence_interpretation",
+    "c_chsh_calcium_source",
+    "c_chsh_generalizes_bell",
+    "c_chsh_avoids_perfect_correlation",
+    "c_chsh_inequality_form",
+    "c_chsh_standard_form",
+    "c_chsh_experimental_prediction",
+    "c_qm_predicts_violation_chsh",
+    "c_chsh_optimal_angles",
+    "c_chsh_detector_efficiency_requirement",
+    "c_chsh_efficiency_angle_tradeoff",
+    "c_chsh_detection_assumption",
+    "c_chsh_two_relative_orientations",
+    "c_wu_shaknov_inadequate",
+    "c_kocher_commins_inadequate",
+    "c_chsh_proposed_experiment",
+    "c_chsh_tsirelson_bound",
+    "c_chsh_experimental_consequence",
+    "c_chsh_general_beyond_photons",
+    "c_chsh_detection_loophole",
 ]
