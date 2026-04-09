@@ -1,0 +1,18 @@
+[project]
+name = "1969-chsh-gaia"
+version = "0.1.0"
+description = "CHSH Inequality (1969): Generalized Bell test for realizable experiments"
+readme = "README.md"
+authors = [
+    { name = "OpenClaw Bot", email = "bot@openclaw.dev" }
+]
+requires-python = ">=3.13"
+dependencies = []
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.gaia]
+type = "knowledge-package"
+uuid = "d3577737-ed2d-4373-b569-d562a17978d0"
