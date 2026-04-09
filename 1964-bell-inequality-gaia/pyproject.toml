@@ -1,0 +1,18 @@
+[project]
+name = "1964-bell-inequality-gaia"
+version = "0.1.0"
+description = "Bell's Theorem (1964): Local hidden variables cannot reproduce QM correlations"
+readme = "README.md"
+authors = [
+    { name = "OpenClaw Bot", email = "bot@openclaw.dev" }
+]
+requires-python = ">=3.13"
+dependencies = []
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.gaia]
+type = "knowledge-package"
+uuid = "6e1dc9f4-c8b0-4fa6-9335-8ea73c64ed87"
