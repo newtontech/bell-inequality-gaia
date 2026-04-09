@@ -20,3 +20,9 @@ Reference papers for the Bell Inequality Gaia formalization, ordered chronologic
 ## Usage with Gaia
 
 Point `/gaia:formalization` at a specific paper's folder to formalize it into a Gaia knowledge package.
+
+## Generated Outputs
+
+- `reasoning_graph.svg` — Full reasoning dependency graph
+- `belief_timeline.json` — Belief values across all phases
+- `evaluation_report.md` — Automated evaluation report
